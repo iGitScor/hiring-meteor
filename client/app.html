@@ -1,0 +1,11 @@
+<div>
+  <jobs-form></jobs-form>
+  <ul>
+    <li *ngFor="#job of jobs">
+      <p>{{job.name}}</p>
+      <p>{{job.description}}</p>
+      <p>{{job.location}}</p>
+      <button (click)="removeJob(job)">Supprimer</button>
+    </li>
+  </ul>
+</div>
