@@ -1,28 +1,24 @@
-import {Component, View, NgZone} from 'angular2/core';
+import {Component, View, NgZone, provide} from 'angular2/core';
 
 import {bootstrap} from 'angular2-meteor';
 
-import {Jobs} from 'collections/jobs';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, APP_BASE_HREF} from 'angular2/router';
 
-import {JobsForm} from 'client/jobs-form/jobs-form';
+import {JobsList} from 'client/jobs-list/jobs-list';
+
+import {JobDetails} from 'client/job-details/job-details';
 
 @Component({
     selector: 'app'
 })
 @View({
-    templateUrl: 'client/app.html',
-    directives: [JobsForm]
+    template: '<router-outlet>',
+    directives: [ROUTER_DIRECTIVES]
 })
-class Hiring {
-  jobs: Mongo.Cursor<Object>;
+@RouteConfig([
+    { path: '/', as: 'JobsList', component: JobsList },
+    { path: '/job/:jobId', as: 'JobDetails', component: JobDetails }
+])
+class Hiring {}
 
-  constructor () {
-      this.jobs = Jobs.find();
-  }
-
-  removeJob(job) {
-    Jobs.remove(job._id);
-  }
-}
-
-bootstrap(Hiring);
+bootstrap(Hiring, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
