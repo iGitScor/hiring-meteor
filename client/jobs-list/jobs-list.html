@@ -2,7 +2,7 @@
   <jobs-form></jobs-form>
   <ul>
     <li *ngFor="#job of jobs">
-      <p>{{job.name}}</p>
+      <p><a [routerLink]="['/JobDetails', {jobId: job._id}]">{{job.name}}</a></p>
       <p>{{job.description}}</p>
       <p>{{job.location}}</p>
       <button (click)="removeJob(job)">Supprimer</button>
