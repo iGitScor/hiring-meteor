@@ -1,6 +1,7 @@
 {
   "files": [
     "typings/main.d.ts",
-    "typings/angular2-meteor/angular2-meteor.d.ts"
+    "typings/angular2-meteor/angular2-meteor.d.ts",
+    "typings/job.d.ts"
   ]
 }
