@@ -1,7 +1,15 @@
-<header>
-  <h2>{{job.name}}</h2>
+<form (submit)="saveJob(job)">
+  <label>Name</label>
+  <input type="text" [(ngModel)]="job.name">
 
-  <p>{{job.description}}</p>
+  <p>{{job.name}}</p>
 
-  <p>{{job.location}}</p>
-</header>
+  <label>Description</label>
+  <input type="text" [(ngModel)]="job.description">
+
+  <label>Location</label>
+  <input type="text" [(ngModel)]="job.location">
+
+  <button type="submit">Save</button>
+  <button [routerLink]="['/JobsList']">Cancel</button>
+</form>

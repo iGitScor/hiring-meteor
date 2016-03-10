@@ -14,7 +14,7 @@ import {RouterLink} from 'angular2/router';
     directives: [JobsForm, RouterLink]
 })
 export class JobsList {
-    jobs: Mongo.Cursor<Object>;
+    jobs: Mongo.Cursor<Job>;
 
     constructor() {
         this.jobs = Jobs.find();

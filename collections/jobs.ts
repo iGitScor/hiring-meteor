@@ -1,1 +1,1 @@
-export var Jobs = new Mongo.Collection('jobs');
+export var Jobs = new Mongo.Collection<Job>('jobs');
