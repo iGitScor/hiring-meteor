@@ -18,21 +18,29 @@ export class JobsForm {
     this.jobsForm = fb.group({
       name: ['', Validators.required],
       description: [''],
-      location: ['Montpellier', Validators.required]
+      location: ['Montpellier', Validators.required],
+      public: [false]
     });
   }
 
   addJob(job) {
     if (this.jobsForm.valid) {
-      Jobs.insert({
-        name: job.name,
-        description: job.description,
-        location: job.location
-      });
+      if (Meteor.userId()) {
+        Jobs.insert({
+          name: job.name,
+          description: job.description,
+          location: job.location,
+          public: job.public,
+          owner: Meteor.userId()
+        });
 
-      (<Control>this.jobsForm.controls['name']).updateValue('');
-      (<Control>this.jobsForm.controls['description']).updateValue('');
-      (<Control>this.jobsForm.controls['location']).updateValue('');
+        (<Control>this.jobsForm.controls['name']).updateValue('');
+        (<Control>this.jobsForm.controls['description']).updateValue('');
+        (<Control>this.jobsForm.controls['location']).updateValue('');
+        (<Control>this.jobsForm.controls['public']).updateValue(false);
+      } else {
+        alert('you are not looged in');
+      }
     }
   }
 }

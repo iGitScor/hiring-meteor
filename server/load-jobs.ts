@@ -7,17 +7,20 @@ export function loadJobs() {
       {
         'name': 'UX Designer',
         'description': "Gère l'expérience utilisateur des projets",
-        'location': 'Montpellier'
+        'location': 'Montpellier',
+        'public': true
       },
       {
         'name': 'Responsable SEO',
         'description': "Gère les optimisations SEO de la marketplace",
-        'location': 'Montpellier'
+        'location': 'Montpellier',
+        'public': true
       },
       {
         'name': 'Happiness Manager',
         'description': "Apporte de la bonne humeur à l'équipe",
-        'location': 'Montpellier'
+        'location': 'Montpellier',
+        'public': false
       }
     ];
 

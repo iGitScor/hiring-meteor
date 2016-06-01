@@ -3,4 +3,5 @@ interface Job {
   name: string;
   description?: string;
   location: string;
+  owner?: string;
 }

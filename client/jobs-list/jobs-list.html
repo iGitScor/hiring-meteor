@@ -1,5 +1,8 @@
 <div>
-  <jobs-form></jobs-form>
+  <jobs-form style="float: left"></jobs-form>
+  <input type="text" #searchtext placeholder="Search by name">
+  <button type="button" (click)="search(searchtext.value)">Search</button>
+  <accounts-ui></accounts-ui>
   <ul>
     <li *ngFor="#job of jobs">
       <p><a [routerLink]="['/JobDetails', {jobId: job._id}]">{{job.name}}</a></p>
