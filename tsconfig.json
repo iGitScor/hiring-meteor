@@ -2,19 +2,11 @@
   "filesGlob": [
     "client/**/*.ts",
     "server/**/*.ts",
-    "collections/**/*.d.ts"
+    "collections/**/*.ts",
+    "typings/**/*.d.ts"
   ],
-  "files": [
-    "client/app.ts",
-    "client/job-details/job-details.ts",
-    "client/jobs-form/jobs-form.ts",
-    "client/jobs-list/jobs-list.ts",
-    "server/jobs.ts",
-    "server/load-jobs.ts",
-    "server/main.ts"
-  ],
-  "compilerOptions": {},
+  "compileOnSave": false,
   "atom": {
-    "rewriteTsconfig": true
+    "rewriteTsconfig": false
   }
 }
