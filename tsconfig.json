@@ -5,9 +5,16 @@
     "collections/**/*.d.ts"
   ],
   "files": [
-    "typings/angular2-meteor/angular2-meteor.d.ts",
-    "typings/ng2-meteor-accounts-ui/ng2-meteor-accounts-ui.d.ts",
-    "typings/ng2-meteor-accounts/ng2-meteor-accounts.d.ts",
-    "typings/job.d.ts"
-  ]
+    "client/app.ts",
+    "client/job-details/job-details.ts",
+    "client/jobs-form/jobs-form.ts",
+    "client/jobs-list/jobs-list.ts",
+    "server/jobs.ts",
+    "server/load-jobs.ts",
+    "server/main.ts"
+  ],
+  "compilerOptions": {},
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
