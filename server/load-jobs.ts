@@ -1,6 +1,7 @@
 import {Jobs} from 'collections/jobs';
 
 export function loadJobs() {
+  // Initial data insertion - startup system
   if (Jobs.find().count() === 0) {
 
     var jobs = [
@@ -17,15 +18,21 @@ export function loadJobs() {
         'public': true
       },
       {
-        'name': 'Happiness Manager',
-        'description': "Apporte de la bonne humeur à l'équipe",
+        'name': 'Responsable service client',
+        'description': "Gère la relation client",
         'location': 'Montpellier',
-        'public': false
+        'public': true
+      },
+      {
+        'name': 'Logisticien',
+        'description': 'Gestionnaire entrepôt de stockage',
+        'location': 'Montpellier',
+        'public': true
       }
     ];
 
-    for (var i = 0; i < jobs.length; i++) {
-      Jobs.insert(jobs[i]);
+    for (var jobIterator = 0; jobIterator < jobs.length; jobIterator++) {
+      Jobs.insert(jobs[jobIterator]);
     }
   }
 };

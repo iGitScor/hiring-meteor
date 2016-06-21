@@ -17,29 +17,29 @@ import {MeteorComponent} from 'angular2-meteor';
   templateUrl: '/client/job-details/job-details.html',
   directives: [RouterLink]
 })
-@RequireUser()
+
 export class JobDetails extends MeteorComponent {
-    job: Job;
+  job: Job;
 
-    constructor(params: RouteParams) {
-      super();
-      var jobId = params.get('jobId');
-      this.subscribe('job', jobId, () => {
-          this.job = Jobs.findOne(jobId);
-      }, true);
-    }
+  constructor(params: RouteParams) {
+    super();
+    var jobId = params.get('jobId');
+    this.subscribe('job', jobId, () => {
+      this.job = Jobs.findOne(jobId);
+    }, true);
+  }
 
-     saveJob(job) {
-      if (Meteor.userId()) {
-        Jobs.update(job._id, {
-          $set: {
-            name: job.name,
-            description: job.description,
-            location: job.location
-          }
-        });
-      } else {
-        alert('error');
-      }
+   saveJob(job) {
+    if (Meteor.userId()) {
+      Jobs.update(job._id, {
+        $set: {
+          name: job.name,
+          description: job.description,
+          location: job.location
+        }
+      });
+    } else {
+      alert('error');
     }
+  }
 }

@@ -5,12 +5,14 @@ Jobs.allow({
     var user = Meteor.user();
     return !!user;
   },
+
   update: function() {
     var user = Meteor.user();
     return !!user;
   },
+
   remove: function() {
     var user = Meteor.user();
     return !!user;
-  }
+  },
 });

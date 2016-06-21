@@ -1,6 +1,10 @@
 {
+  "filesGlob": [
+    "client/**/*.ts",
+    "server/**/*.ts",
+    "collections/**/*.d.ts"
+  ],
   "files": [
-    "typings/main.d.ts",
     "typings/angular2-meteor/angular2-meteor.d.ts",
     "typings/ng2-meteor-accounts-ui/ng2-meteor-accounts-ui.d.ts",
     "typings/ng2-meteor-accounts/ng2-meteor-accounts.d.ts",

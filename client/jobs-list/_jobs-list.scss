@@ -1,0 +1,12 @@
+jobs-list {
+  display: block;
+
+  .header {
+    font-family: 'Raleway', sans-serif;
+    color: mix(black, darkgray, 30%);
+    background-color: white;
+    border-bottom: 2px solid $main-color;
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+}

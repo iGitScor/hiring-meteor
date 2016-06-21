@@ -9,16 +9,17 @@ import {JobsList} from 'client/jobs-list/jobs-list';
 import {JobDetails} from 'client/job-details/job-details';
 
 @Component({
-    selector: 'app'
+  selector: 'app'
 })
 @View({
-    template: '<router-outlet>',
-    directives: [ROUTER_DIRECTIVES]
+  template: '<router-outlet>',
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    { path: '/', as: 'JobsList', component: JobsList },
-    { path: '/job/:jobId', as: 'JobDetails', component: JobDetails }
+  { path: '/', as: 'JobsList', component: JobsList },
+  { path: '/job/:jobId', as: 'JobDetails', component: JobDetails }
 ])
+
 class Hiring {}
 
 bootstrap(Hiring, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);

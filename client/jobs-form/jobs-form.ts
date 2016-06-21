@@ -10,12 +10,13 @@ import {Jobs} from 'collections/jobs';
 @View({
   templateUrl: '/client/jobs-form/jobs-form.html'
 })
+
 export class JobsForm {
   jobsForm: ControlGroup;
 
   constructor() {
-    var fb = new FormBuilder();
-    this.jobsForm = fb.group({
+    var formInstance = new FormBuilder();
+    this.jobsForm = formInstance.group({
       name: ['', Validators.required],
       description: [''],
       location: ['Montpellier', Validators.required],

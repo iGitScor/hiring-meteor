@@ -1,14 +1,44 @@
-<div>
-  <jobs-form style="float: left"></jobs-form>
-  <input type="text" #searchtext placeholder="Search by name">
-  <button type="button" (click)="search(searchtext.value)">Search</button>
-  <accounts-ui></accounts-ui>
-  <ul>
-    <li *ngFor="#job of jobs">
-      <p><a [routerLink]="['/JobDetails', {jobId: job._id}]">{{job.name}}</a></p>
-      <p>{{job.description}}</p>
-      <p>{{job.location}}</p>
-      <button (click)="removeJob(job)">Supprimer</button>
+<!-- <accounts-ui></accounts-ui> -->
+<jobs-form class="container panel" *ngIf="currentUser !== null"></jobs-form>
+<div class="header">
+  <div class="container">
+    <h2 class="text-center">La meilleure façon de trouver un emploi chez nous</h2>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Rechercher par nom..." #searchtext (keypress)="submitHandler($event, searchtext.value)">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" (click)="search(searchtext.value)">Rechercher</button>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h3>Liste des emplois</h3>
+  <div class="border-width"></div>
+  <ul class="list-unstyled" *ngIf="hasAtLeastOneJob()">
+    <li *ngFor="#job of jobs; #jobIndex = index" [className]="'item bg-' + (jobIndex % 4)">
+      <p class="pull-right">{{job.location}}</p>
+      <p class="title"><a [routerLink]="['/JobDetails', {jobId: job._id}]">› {{ job.name }}</a></p>
+      <p class="desc">{{ job.description }}</p>
+      <button *ngIf="currentUser !== null" (click)="removeJob(job)">Supprimer</button>
     </li>
   </ul>
+  <p class="intro" *ngIf="hasAtLeastOneJob() === false">Pas de poste à pourvoir pour l'instant</p>
 </div>
+
+
+<div class="container">
+  <h3>Qui sommes-nous ?</h3>
+  <div class="border-width"></div>
+  <p class="intro">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Etiam imperdiet ex ut quam vestibulum malesuada.
+    Nam a maximus ipsum. Vivamus lobortis porttitor libero, sed sagittis orci varius vitae.
+    Donec dictum turpis vel purus bibendum tristique.
+    Nullam tellus libero, condimentum a ornare ac, varius nec urna.
+    Donec tincidunt dignissim mi ac pellentesque.
+    Aliquam nec turpis vehicula, imperdiet purus sagittis, sagittis erat.
+  </p>
+</div>
+
+
+{{ logger | json }}
