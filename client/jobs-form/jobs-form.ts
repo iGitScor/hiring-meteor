@@ -12,6 +12,8 @@ import {Jobs} from 'collections/jobs';
 })
 
 export class JobsForm {
+
+  defaultLocation: String = 'Montpellier';
   jobsForm: ControlGroup;
 
   constructor() {
@@ -19,14 +21,14 @@ export class JobsForm {
     this.jobsForm = formInstance.group({
       name: ['', Validators.required],
       description: [''],
-      location: ['Montpellier', Validators.required],
+      location: [this.defaultLocation, Validators.required],
       public: [false]
     });
   }
 
   addJob(job) {
     if (this.jobsForm.valid) {
-      if (Meteor.userId()) {
+      // if (Meteor.userId()) {
         Jobs.insert({
           name: job.name,
           description: job.description,
@@ -37,11 +39,11 @@ export class JobsForm {
 
         (<Control>this.jobsForm.controls['name']).updateValue('');
         (<Control>this.jobsForm.controls['description']).updateValue('');
-        (<Control>this.jobsForm.controls['location']).updateValue('');
+        (<Control>this.jobsForm.controls['location']).updateValue(this.defaultLocation);
         (<Control>this.jobsForm.controls['public']).updateValue(false);
-      } else {
-        alert('you are not looged in');
-      }
+      // } else {
+      //   alert('you are not looged in');
+      // }
     }
   }
 }

@@ -1,6 +1,7 @@
-<!-- <accounts-ui></accounts-ui> -->
-<jobs-form class="container panel" *ngIf="currentUser !== null"></jobs-form>
 <div class="header">
+  <div class="container" *ngIf="currentUser !== null">
+    <jobs-form></jobs-form>
+  </div>
   <div class="container">
     <h2 class="text-center">La meilleure façon de trouver un emploi chez nous</h2>
     <div class="input-group">
@@ -11,6 +12,7 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <h3>Liste des emplois</h3>
   <div class="border-width"></div>
@@ -25,20 +27,8 @@
   <p class="intro" *ngIf="hasAtLeastOneJob() === false">Pas de poste à pourvoir pour l'instant</p>
 </div>
 
-
 <div class="container">
   <h3>Qui sommes-nous ?</h3>
   <div class="border-width"></div>
-  <p class="intro">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Etiam imperdiet ex ut quam vestibulum malesuada.
-    Nam a maximus ipsum. Vivamus lobortis porttitor libero, sed sagittis orci varius vitae.
-    Donec dictum turpis vel purus bibendum tristique.
-    Nullam tellus libero, condimentum a ornare ac, varius nec urna.
-    Donec tincidunt dignissim mi ac pellentesque.
-    Aliquam nec turpis vehicula, imperdiet purus sagittis, sagittis erat.
-  </p>
+  <p class="intro">{{ description }}</p>
 </div>
-
-
-{{ logger | json }}

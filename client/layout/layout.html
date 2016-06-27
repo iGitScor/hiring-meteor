@@ -1,0 +1,28 @@
+<header class="navbar-fixed-top">
+  <div class="top-bar">
+    <div class="container text-right">
+      <accounts-ui></accounts-ui>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="pull-left">
+      <img src="/assets/logo-color.jpg" class="img-responsive" />
+    </h1>
+    <div class="pull-right">
+      <ul class="nav navbar-nav">
+        <li>
+          <a [href]="'mailto:' + contact" class="btn btn-xs btn-default navbar-btn">Postuler</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</header>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="navbar-fixed-bottom">
+  <div class="container">&copy; {{ company }}</div>
+</footer>

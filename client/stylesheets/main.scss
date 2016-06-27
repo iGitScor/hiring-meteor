@@ -9,20 +9,15 @@ $light-color: #ededed;
 @import 'elements/_app';
 
 /** Objects **/
+@import 'objects/_border-width';
 @import 'objects/_panel';
+@import 'objects/_top-bar';
 
 /** Components **/
 @import '../jobs-form/_jobs-form';
 @import '../jobs-list/_jobs-item';
 @import '../jobs-list/_jobs-list';
+@import '../job-details/_job-details';
 
-.intro {
-  font-family: 'Raleway', sans-serif;
-}
-
-.border-width {
-  width: 60px;
-  height: 3px;
-  background: $main-color;
-  margin: 0 0 1.5em 0;
-}
+/** Trumps **/
+@import 'trumps/_text-modifier';

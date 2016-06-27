@@ -1,28 +1,35 @@
+import {MeteorComponent} from 'angular2-meteor';
+
 import {Component, View} from 'angular2/core';
+
+import {RouterLink} from 'angular2/router';
 
 import {Jobs} from 'collections/jobs';
 
 import {JobsForm} from 'client/jobs-form/jobs-form';
 
-import {RouterLink} from 'angular2/router';
-
-import {AccountsUI} from 'meteor-accounts-ui';
-
 import {InjectUser} from 'meteor-accounts';
-
-import {MeteorComponent} from 'angular2-meteor';
 
 @Component({
   selector: 'jobs-list'
 })
 @View({
   templateUrl: '/client/jobs-list/jobs-list.html',
-  directives: [JobsForm, RouterLink, AccountsUI]
+  directives: [JobsForm, RouterLink]
 })
 @InjectUser('currentUser')
 
 export class JobsList extends MeteorComponent {
   jobs: Mongo.Cursor<Job>;
+  description: String = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'Etiam imperdiet ex ut quam vestibulum malesuada.',
+    'Nam a maximus ipsum. Vivamus lobortis porttitor libero, sed sagittis orci varius vitae.',
+    'Donec dictum turpis vel purus bibendum tristique.',
+    'Nullam tellus libero, condimentum a ornare ac, varius nec urna.',
+    'Donec tincidunt dignissim mi ac pellentesque.',
+    'Aliquam nec turpis vehicula, imperdiet purus sagittis, sagittis erat.',
+  ].join();
 
   constructor() {
     super();
@@ -48,7 +55,7 @@ export class JobsList extends MeteorComponent {
     Jobs.remove(job._id);
   }
 
-  search(value: string) {
+  search(value?: string) {
     if (value) {
       var searchRegex = new RegExp(
         value.toLowerCase(),

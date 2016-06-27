@@ -1,13 +1,24 @@
-<form (submit)="saveJob(job)" *ngIf="job">
-  <label>Name</label>
-  <input type="text" [(ngModel)]="job.name">
+<div class="header">
+  <div class="container">
+    <h1>Edition d'une annonce</h1>
+    <form (submit)="saveJob(job)" *ngIf="job">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="job.name">
+      </div>
 
-  <label>Description</label>
-  <input type="text" [(ngModel)]="job.description">
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" [(ngModel)]="job.description">
+      </div>
 
-  <label>Location</label>
-  <input type="text" [(ngModel)]="job.location">
+      <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" [(ngModel)]="job.location">
+      </div>
 
-  <button type="submit">Save</button>
-  <button [routerLink]="['/JobsList']">Cancel</button>
-</form>
+      <button [routerLink]="['/JobsList']" class="btn btn-danger">Cancel</button>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #TOP BAR
+\*------------------------------------*/
+
+$spacing: 2px;
+
+.top-bar {
+  background: $main-color;
+  padding: $spacing;
+
+  // Top bar item based on accounts-ui element
+  .login-link-text {
+    color: $main-color;
+    background: $light-color;
+    padding: ($spacing * 2) ($spacing * 4);
+  }
+}
