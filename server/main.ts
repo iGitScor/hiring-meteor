@@ -1,4 +1,4 @@
-import {loadJobs} from './load-jobs';
+import { loadJobs } from './load-jobs';
 
 import './jobs';
 

@@ -1,12 +1,12 @@
-import {RequireUser} from 'meteor-accounts';
+import { RequireUser } from 'meteor-accounts';
 
-import {MeteorComponent} from 'angular2-meteor';
+import { MeteorComponent } from 'angular2-meteor';
 
-import {Component, View} from 'angular2/core';
+import { Component, View } from 'angular2/core';
 
-import {RouteParams, RouterLink} from 'angular2/router';
+import { RouteParams, RouterLink } from 'angular2/router';
 
-import {Jobs} from 'collections/jobs';
+import { Jobs } from 'collections/jobs';
 
 @Component({
   selector: 'job-details'

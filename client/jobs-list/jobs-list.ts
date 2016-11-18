@@ -1,14 +1,14 @@
-import {MeteorComponent} from 'angular2-meteor';
+import { MeteorComponent } from 'angular2-meteor';
 
-import {Component, View} from 'angular2/core';
+import { Component, View } from 'angular2/core';
 
-import {RouterLink} from 'angular2/router';
+import { RouterLink } from 'angular2/router';
 
-import {Jobs} from 'collections/jobs';
+import { Jobs } from 'collections/jobs';
 
-import {JobsForm} from 'client/jobs-form/jobs-form';
+import { JobsForm } from 'client/jobs-form/jobs-form';
 
-import {InjectUser} from 'meteor-accounts';
+import { InjectUser } from 'meteor-accounts';
 
 @Component({
   selector: 'jobs-list'

@@ -1,4 +1,4 @@
-import {Jobs} from 'collections/jobs';
+import { Jobs } from 'collections/jobs';
 
 export function loadJobs() {
   // Initial data insertion - startup system

@@ -1,8 +1,8 @@
-import {Component, View} from 'angular2/core';
+import { Component, View } from 'angular2/core';
 
-import {FormBuilder, Control, ControlGroup, Validators} from 'angular2/common';
+import { FormBuilder, Control, ControlGroup, Validators } from 'angular2/common';
 
-import {Jobs} from 'collections/jobs';
+import { Jobs } from 'collections/jobs';
 
 @Component({
   selector: 'jobs-form'

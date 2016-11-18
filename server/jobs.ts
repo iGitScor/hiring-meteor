@@ -1,4 +1,4 @@
-import {Jobs} from 'collections/jobs';
+import { Jobs } from 'collections/jobs';
 
 function buildQuery(jobId?: string): Object {
   // Get jobs depending on ownership or public property
