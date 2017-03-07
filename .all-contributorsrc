@@ -1,0 +1,33 @@
+{
+  "projectName": "hiring-meteor",
+  "projectOwner": "iGitScor",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "iGitScor",
+      "name": "Sebastien Correaud",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2276944?v=3",
+      "profile": "http://twitter.com/iTweetScor",
+      "contributions": [
+        "infra",
+        "code",
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "MathieuFortune",
+      "name": "Mathieu Fortune",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10495362?v=3",
+      "profile": "https://github.com/MathieuFortune",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    }
+  ]
+}
