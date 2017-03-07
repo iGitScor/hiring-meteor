@@ -10,6 +10,8 @@ import { JobsList } from 'client/jobs-list/jobs-list';
 
 import { JobDetails } from 'client/job-details/job-details';
 
+import { JobsForm } from 'client/jobs-form/jobs-form';
+
 import { AppService } from 'client/services/app.service';
 
 import { AccountsUI } from 'meteor-accounts-ui';
@@ -24,6 +26,7 @@ import { AccountsUI } from 'meteor-accounts-ui';
 })
 @RouteConfig([
   { path: '/', as: 'JobsList', component: JobsList },
+  { path: '/job/add', as: 'JobForm', component: JobsForm },
   { path: '/job/:jobId', as: 'JobDetails', component: JobDetails }
 ])
 

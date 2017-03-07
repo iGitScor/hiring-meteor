@@ -1,7 +1,4 @@
 <div class="header">
-  <div class="container" *ngIf="currentUser !== null">
-    <jobs-form></jobs-form>
-  </div>
   <div class="container">
     <h2 class="text-center">La meilleure façon de trouver un emploi chez nous</h2>
     <div class="input-group">
@@ -13,12 +10,18 @@
   </div>
 </div>
 
+<div class="container admin-area" *ngIf="currentUser !== null">
+  <a [routerLink]="['/JobForm']" class="btn btn-success">
+    Ajouter une fiche de poste
+  </a>
+</div>
+
 <div class="container">
   <h3>Liste des emplois</h3>
   <div class="border-width"></div>
   <ul class="list-unstyled" *ngIf="hasAtLeastOneJob()">
     <li *ngFor="#job of jobs; #jobIndex = index" [className]="'item bg-' + (jobIndex % 4)">
-      <p class="pull-right">{{job.location}}</p>
+      <p class="pull-right">{{ job.location }}</p>
       <p class="title"><a [routerLink]="['/JobDetails', {jobId: job._id}]">› {{ job.name }}</a></p>
       <p class="desc">{{ job.description }}</p>
       <button *ngIf="currentUser !== null" (click)="removeJob(job)">Supprimer</button>

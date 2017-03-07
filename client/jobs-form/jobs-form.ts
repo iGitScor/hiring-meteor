@@ -1,3 +1,5 @@
+import { RequireUser } from 'meteor-accounts';
+
 import { Component, View } from 'angular2/core';
 
 import { FormBuilder, Control, ControlGroup, Validators } from 'angular2/common';
@@ -11,6 +13,7 @@ import { Jobs } from 'collections/jobs';
   templateUrl: '/client/jobs-form/jobs-form.html'
 })
 
+// @RequireUser()
 export class JobsForm {
 
   defaultLocation: String = 'Montpellier';

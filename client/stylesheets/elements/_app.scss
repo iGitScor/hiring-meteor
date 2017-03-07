@@ -1,5 +1,27 @@
+$admin-color: #ffc419;
+
 app {
   display: block;
-  margin-top: 70px;
-  padding-bottom: 70px;
+
+  .content {
+    min-height: calc(100vh - 100px);
+  }
+
+  .admin-area {
+    border: 1px dotted $admin-color;
+    background-color: rgba($admin-color, .2);
+    padding: 16px;
+    position: relative;
+
+    &::after {
+      content: 'ADMIN';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 3px;
+      color: $main-color;
+      font-weight: bold;
+      text-shadow: 2px 2px $light-color;
+    }
+  }
 }
